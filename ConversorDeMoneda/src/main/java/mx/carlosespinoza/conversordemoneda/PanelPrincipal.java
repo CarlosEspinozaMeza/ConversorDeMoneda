@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GUI;
+package mx.carlosespinoza.conversordemoneda;
 
 /**
  *
@@ -29,19 +29,29 @@ public class PanelPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_next = new javax.swing.JButton();
         bnt_exit = new javax.swing.JButton();
-        cb_selector = new javax.swing.JComboBox<>();
+        cboxSelector = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Seleccione la convercion que va a realizar");
+        jLabel1.setText("Bienvenido al Conversor de Alura");
 
         btn_next.setText("Siguiente");
+        btn_next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nextActionPerformed(evt);
+            }
+        });
 
         bnt_exit.setText("Salir");
+        bnt_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_exitActionPerformed(evt);
+            }
+        });
 
-        cb_selector.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cb_selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Moneda", "Temperatura", "Distancia" }));
+        cboxSelector.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        cboxSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Moneda", "Temperatura", "Distancia" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,25 +61,25 @@ public class PanelPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_next)
-                                .addGap(172, 172, 172)
-                                .addComponent(bnt_exit))
-                            .addComponent(jLabel1)))
+                        .addComponent(btn_next)
+                        .addGap(172, 172, 172)
+                        .addComponent(bnt_exit))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addComponent(cb_selector, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cboxSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel1)))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(50, 50, 50)
-                .addComponent(cb_selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGap(51, 51, 51)
+                .addComponent(cboxSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_next)
                     .addComponent(bnt_exit))
@@ -78,6 +88,51 @@ public class PanelPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bnt_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_exitActionPerformed
+        
+        PanelConfirmacion jfSalir = new PanelConfirmacion();
+        jfSalir.show();
+        dispose();
+    }//GEN-LAST:event_bnt_exitActionPerformed
+
+    private void btn_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextActionPerformed
+        
+        PanelMoneda jfMoneda = new PanelMoneda();
+        PanelTemperatura jfTemperatura = new PanelTemperatura();
+        PanelDistancia jfDistancia = new PanelDistancia();
+        
+        int box1 = cboxSelector.getSelectedIndex();
+        switch (box1) {
+            case 0:
+                jfMoneda.show();
+                dispose();
+                break;
+            case 1:
+                jfTemperatura.show();
+                dispose();
+                break;
+            case 2:
+                jfDistancia.show();
+                dispose();
+                break;
+            default:
+                throw new AssertionError();
+        }
+        /**if (box1 == 0) {
+            jfMoneda.show();
+            dispose();            
+        }
+        if (box1 == 1) {
+            jfTemperatura.show();
+            dispose();
+        }
+        if (box1 == 2) {
+            jfDistancia.show();
+            dispose();
+        }*/
+  
+    }//GEN-LAST:event_btn_nextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,7 +172,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bnt_exit;
     private javax.swing.JButton btn_next;
-    private javax.swing.JComboBox<String> cb_selector;
+    private javax.swing.JComboBox<String> cboxSelector;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

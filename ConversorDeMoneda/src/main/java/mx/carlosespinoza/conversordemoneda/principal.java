@@ -8,6 +8,13 @@ package mx.carlosespinoza.conversordemoneda;
  *
  * @author charl
  */
-public class conversorDeTemperatura {
+public class principal {
+    
+    public static void main (String[] args){
+    
+        PanelPrincipal abrir = new PanelPrincipal();
+        abrir.setVisible(true);
+    }
+    
     
 }

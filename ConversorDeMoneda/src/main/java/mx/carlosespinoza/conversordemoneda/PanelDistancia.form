@@ -41,13 +41,13 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cb_distancia2" pref="125" max="32767" attributes="0"/>
-                                  <Component id="cb_distancia1" max="32767" attributes="0"/>
+                                  <Component id="boxDistancia2" pref="125" max="32767" attributes="0"/>
+                                  <Component id="boxDistancia1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txt_distancia2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txt_distancia1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDistancia1" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
+                                  <Component id="txtDistancia2" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -64,13 +64,13 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cb_distancia1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_distancia1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="boxDistancia1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDistancia1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cb_distancia2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_distancia2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="boxDistancia2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDistancia2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="98" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -92,18 +92,18 @@
         <Property name="text" type="java.lang.String" value="Conversor de Distancias"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cb_distancia1">
+    <Component class="javax.swing.JComboBox" name="boxDistancia1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="8">
-            <StringItem index="0" value="milimetros&#x9;mm"/>
-            <StringItem index="1" value="centimetros&#x9;cm"/>
-            <StringItem index="2" value="Metros&#x9;M"/>
-            <StringItem index="3" value="Kilometros&#x9;Km"/>
-            <StringItem index="4" value="Pulgadas&#x9;inch"/>
-            <StringItem index="5" value="Pies&#x9;ft"/>
-            <StringItem index="6" value="Yardas&#x9;yd"/>
-            <StringItem index="7" value="Millas&#x9;mi"/>
+            <StringItem index="0" value="milimetros--mm"/>
+            <StringItem index="1" value="centimetros--cm"/>
+            <StringItem index="2" value="Metros--M"/>
+            <StringItem index="3" value="Kilometros--Km"/>
+            <StringItem index="4" value="Pulgadas--inch"/>
+            <StringItem index="5" value="Pies--ft"/>
+            <StringItem index="6" value="Yardas--yd"/>
+            <StringItem index="7" value="Millas--mi"/>
           </StringArray>
         </Property>
       </Properties>
@@ -111,18 +111,18 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cb_distancia2">
+    <Component class="javax.swing.JComboBox" name="boxDistancia2">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="8">
-            <StringItem index="0" value="milimetros&#x9;mm"/>
-            <StringItem index="1" value="centimetros&#x9;cm"/>
-            <StringItem index="2" value="Metros&#x9;M"/>
-            <StringItem index="3" value="Kilometros&#x9;Km"/>
-            <StringItem index="4" value="Pulgadas&#x9;inch"/>
-            <StringItem index="5" value="Pies&#x9;ft"/>
-            <StringItem index="6" value="Yardas&#x9;yd"/>
-            <StringItem index="7" value="Millas&#x9;mi"/>
+            <StringItem index="0" value="milimetros--mm"/>
+            <StringItem index="1" value="centimetros--cm"/>
+            <StringItem index="2" value="Metros--M"/>
+            <StringItem index="3" value="Kilometros--Km"/>
+            <StringItem index="4" value="Pulgadas--inch"/>
+            <StringItem index="5" value="Pies--ft"/>
+            <StringItem index="6" value="Yardas--yd"/>
+            <StringItem index="7" value="Millas--mi"/>
           </StringArray>
         </Property>
       </Properties>
@@ -130,24 +130,39 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_distancia1">
+    <Component class="javax.swing.JTextField" name="txtDistancia1">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDistancia1KeyTyped"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_distancia2">
+    <Component class="javax.swing.JTextField" name="txtDistancia2">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btn_previus">
       <Properties>
         <Property name="text" type="java.lang.String" value="Regresar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_previusActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_convertir">
       <Properties>
         <Property name="text" type="java.lang.String" value="Convertir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_convertirActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_exit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_exitActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
